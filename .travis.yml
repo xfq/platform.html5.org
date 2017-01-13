@@ -1,0 +1,14 @@
+language: generic
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
+install:
+  - curl -O https://sideshowbarker.net/nightlies/jar/vnu.jar
+script:
+  - /usr/lib/jvm/java-8-oracle/jre/bin/java -jar vnu.jar --skip-non-html /home/travis/build/whatwg/platform.html5.org
+notifications:
+  email:
+    on_success: never
+    on_failure: always
